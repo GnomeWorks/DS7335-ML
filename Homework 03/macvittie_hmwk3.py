@@ -245,7 +245,7 @@ print("MACVITTIE - HOMEWORK 3")
 print("Using randomized weights and scores, for the lawlz.\n")
 
 p_names = ['Claire', 'Angel', 'Val', 'Beatrix', 'Y\'shtola', 'Roxy', 'Moth', 'Troi', 'Olivia', 'Lilith']
-p_cats = ['Willingness to Travel', 'Desire for New Experience', 'Cost', 'Choice of Menu', 'Service', 'Environment']
+p_cats = ['Willingness to Travel', 'Desire for New Experience', 'Cost', 'Pickiness', 'Service', 'Vegetarian']
 
 people = makeDict(p_names, p_cats, 'float')
 
@@ -260,7 +260,7 @@ print("---== People Matrix ==---")
 print(M_people, "\n")
 
 r_names = ['The Bottle', 'Humphrey\'s', 'Maggie Meyer\'s', 'Keegan\'s', 'Grille 29', 'Caffe Espresso', 'Anduzzi\'s', 'Cotton Row', 'Republic Chophouse']
-r_cats = ['Distance', 'Novelty', 'Cost', 'Menu Options', 'Staff', 'Ambiance']
+r_cats = ['Distance', 'Novelty', 'Cost', 'Menu Options', 'Staff', 'Vegetarian']
 
 restaurants = makeDict(r_names, r_cats, 'int')
 

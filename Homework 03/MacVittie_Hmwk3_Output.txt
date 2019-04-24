@@ -6,7 +6,7 @@ Using randomized weights and scores, for the lawlz.
 The names used here are NPCs from my D&D setting (some of which may be borrowed from other sources).
 
 == Preferences ==
-['Willingness to Travel', 'Desire for New Experience', 'Cost', 'Choice of Menu', 'Service', 'Environment'] 
+['Willingness to Travel', 'Desire for New Experience', 'Cost', 'Pickiness', 'Service', 'Vegetarian'] 
 
 ---== People Matrix ==---
 [[0.24 0.43 0.06 0.06 0.18 0.03]
@@ -25,7 +25,7 @@ The names used here are NPCs from my D&D setting (some of which may be borrowed 
 The names of these restaurants come from the city I currently live in, and the restaurants I worked in when I was a chef.
 
 == Attributes ==
-['Distance', 'Novelty', 'Cost', 'Menu Options', 'Staff', 'Ambiance'] 
+['Distance', 'Novelty', 'Cost', 'Menu Options', 'Staff', 'Vegetarian'] 
 
 ---== Restaurant Matrix ==---
 [[ 4  7  9  1  1  7]
@@ -114,3 +114,7 @@ Which restaurant got the best rating, and who had the strongest preference for i
 After being confused by the output for a moment, these are in descending order (so 9 is best, 1 is worst). This means that our results match up with what we saw in the summarized matrix, above.
 
 Given how the ranks are generated, I'm not sure there is a way that a difference could show up between the rankings and the preference matrix; or, if there is, it is probably due to extreme outliers: people who value one attribute significantly higher than all others.
+{'Claire': {'Willingness to Travel': 0.24, 'Desire for New Experience': 0.43, 'Cost': 0.06, 'Pickiness': 0.06, 'Service': 0.18, 'Vegetarian': 0.03}, 'Angel': {'Willingness to Travel': 0.02, 'Desire for New Experience': 0.04, 'Cost': 0.17, 'Pickiness': 0.35, 'Service': 0.02, 'Vegetarian': 0.4}, 'Val': {'Willingness to Travel': 0.17, 'Desire for New Experience': 0.07, 'Cost': 0.01, 'Pickiness': 0.26, 'Service': 0.33, 'Vegetarian': 0.16}, 'Beatrix': {'Willingness to Travel': 0.17, 'Desire for New Experience': 0.12, 'Cost': 0.39, 'Pickiness': 0.05, 'Service': 0.14, 'Vegetarian': 0.13}, "Y'shtola": {'Willingness to Travel': 0.16, 'Desire for New Experience': 0.06, 'Cost': 0.48, 'Pickiness': 0.04, 'Service': 0.13, 'Vegetarian': 0.13}, 'Roxy': {'Willingness to Travel': 0.27, 'Desire for New Experience': 0.35, 'Cost': 0.11, 'Pickiness': 0.1, 'Service': 0.1, 'Vegetarian': 0.07}, 'Moth': {'Willingness to Travel': 0.12, 'Desire for New Experience': 0.17, 'Cost': 0.12, 'Pickiness': 0.03, 'Service': 0.47, 'Vegetarian': 0.09}, 'Troi': {'Willingness to Travel': 0.3, 'Desire for New Experience': 0.01, 'Cost': 0.01, 'Pickiness': 0.06, 'Service': 0.3, 'Vegetarian': 0.32}, 'Olivia': {'Willingness to Travel': 0.27, 'Desire for New Experience': 0.23, 'Cost': 0.3, 'Pickiness': 0.03, 'Service': 0.02, 'Vegetarian': 0.15}, 'Lilith': {'Willingness to Travel': 0.2, 'Desire for New Experience': 0.09, 'Cost': 0.13, 'Pickiness': 0.11, 'Service': 0.11, 'Vegetarian': 0.36}}
+{'The Bottle': {'Distance': 4, 'Novelty': 7, 'Cost': 9, 'Menu Options': 1, 'Staff': 1, 'Vegetarian': 7}, "Humphrey's": {'Distance': 3, 'Novelty': 2, 'Cost': 5, 'Menu Options': 5, 'Staff': 1, 'Vegetarian': 6}, "Maggie Meyer's": {'Distance': 8, 'Novelty': 6, 'Cost': 1, 'Menu Options': 5, 'Staff': 10, 'Vegetarian': 10}, "Keegan's": {'Distance': 3, 'Novelty': 3, 'Cost': 1, 'Menu Options': 4, 'Staff': 8, 'Vegetarian': 4}, 'Grille 29': {'Distance': 10, 'Novelty': 8, 'Cost': 6, 'Menu Options': 2, 'Staff': 7, 'Vegetarian': 7}, 'Caffe Espresso': {'Distance': 3, 'Novelty': 4, 'Cost': 4, 'Menu Options': 10, 'Staff': 5, 'Vegetarian': 7}, "Anduzzi's": {'Distance': 7, 'Novelty': 7, 'Cost': 5, 'Menu Options': 3, 'Staff': 3, 'Vegetarian': 5}, 'Cotton Row': {'Distance': 1, 'Novelty': 2, 'Cost': 3, 'Menu Options': 1, 'Staff': 9, 'Vegetarian': 8}, 'Republic Chophouse': {'Distance': 9, 'Novelty': 4, 'Cost': 3, 'Menu Options': 4, 'Staff': 5, 'Vegetarian': 2}}
+3.6.6 | packaged by conda-forge | (default, Jul 26 2018, 11:48:23) [MSC v.1900 64 bit (AMD64)]
+3.6.6 | packaged by conda-forge | (default, Jul 26 2018, 11:48:23) [MSC v.1900 64 bit (AMD64)]

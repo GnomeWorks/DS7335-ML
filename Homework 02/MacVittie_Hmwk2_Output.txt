@@ -1,0 +1,47 @@
+MACVITTIE - HOMEWORK 2
+
+1: A medical claim is denoted by a claim number ('Claim.Number'). Each claim consists of one or more medical lines denoted by a claim line number ('Claim.Line.Number').
+
+	a) Find the number of claim lines that have J-codes.
+		 51029
+
+	b) How much was paid for J-codes to providers for 'in network' claims?
+		$2418429.57
+
+	c) What are the top five J-codes based on the payment to providers?
+		J1745: 434232.08058999997
+		J0180: 299776.56076499994
+		J9310: 168630.87357999996
+		J3490: 90249.91244999997
+		J1644: 81909.39601500003
+
+
+2: For the following exercises, determine the number of providers that were paid for at least one J-code. Use the J-code claims for these providers to complete the following exercises.
+
+	a) Create a scatter plot that displays the number of unpaid claims (lines where the ‘Provider.Payment.Amount’ field is equal to zero) for each provider versus the number of paid claims.
+		Chart can be found as 'macv_q_2a.png'.
+
+	b) What insights can you suggest from the graph?
+		Looks like there are a lot more unpaid claims than paid claims. I'll be honest, I'm not really sure how to interpret that, as I'm not in the medical or insurance industries. These values seem to be all over the place, but there does seem to be at least some correlation between number of paid and number of unpaid claims.
+
+	c) Based on the graph, is the behavior of any of the providers concerning? Explain.
+		Again, that's hard to say without some domain knowledge. I would presume that unpaid claims are bad, but then I'm not sure if a claim is unpaid because the firm in question disagrees that they need to cover it, or perhaps there is some investigation into insurance fraud. If there's not anything unusual going on, then I would presume that the firms with large numbers of unpaid claims are probably doing poorly.
+
+
+3: Consider all claim lines with a J-code.
+
+	a) What percentage of J-code claim lines were unpaid?
+		88.30%
+
+	b) Create a model to predict when a J-code is unpaid. Explain why you choose the modeling approach.
+		For starters, we needed to one-hot encode our categoricals. I then used the grid search code from assignment 1 to run the data through a variety of models.
+
+	c) How accurate is your model at predicting unpaid claims?
+		Decision trees were generally trash, with an AUC of at most .6, which is pretty bad.
+		Logistic regressions struggled to get over a .5, so those are clearly not the best use here.
+		Random forests were simlarly strapped to get results, hitting an AUC of .54 at best.
+		XGBoost, however, performed pretty well, with an AUC of .7 using 19 estimators and a max depth of 19. It got similar results with a max depth of 17, though, so I think that's probably as good as it's going to get. Looking at smaller numbers of estimaters, 16 estimators with depth 19 got pretty similar results, so I think that's as good as it's going to get.
+
+	d) What data attributes are predominately influencing the rate of non-payment?
+		Since the best results were from an XGBoost, we can't look at what it was using to decide, so it's hard to say.
+		Apparently there exists some way to get feature importance out of XGBoost, but I wasn't able to figure it out.
