@@ -1,0 +1,11 @@
+SITES TO USE
+
+https://medium.com/sigmoid/a-brief-introduction-to-gans-and-how-to-code-them-2620ee465c30
+https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317
+https://towardsdatascience.com/understanding-generative-adversarial-networks-4dafc963f2ef
+https://towardsdatascience.com/generative-adversarial-networks-explained-34472718707a
+https://towardsdatascience.com/art-of-generative-adversarial-networks-gan-62e96a21bc35
+https://towardsdatascience.com/generative-adversarial-networks-gans-for-beginners-82f26753335e
+https://towardsdatascience.com/graduating-in-gans-going-from-understanding-generative-adversarial-networks-to-running-your-own-39804c283399
+https://medium.com/@sharimpervez/a-simple-introduction-to-generative-adversarial-networks-gans-8e327ff65f7c
+https://medium.com/the-downlinq/artificial-colorization-of-grayscale-satellite-imagery-via-gans-part-1-79c8d137e97b
