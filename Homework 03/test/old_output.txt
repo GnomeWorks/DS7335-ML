@@ -1,0 +1,118 @@
+MACVITTIE - HOMEWORK 3
+Using randomized weights and scores, for the lawlz.
+
+{'Claire': {'Willingness to Travel': 0.24, 'Desire for New Experience': 0.43, 'Cost': 0.06, 'Choice of Menu': 0.06, 'Service': 0.18, 'Environment': 0.03}, 'Angel': {'Willingness to Travel': 0.02, 'Desire for New Experience': 0.04, 'Cost': 0.17, 'Choice of Menu': 0.35, 'Service': 0.02, 'Environment': 0.4}, 'Val': {'Willingness to Travel': 0.17, 'Desire for New Experience': 0.07, 'Cost': 0.01, 'Choice of Menu': 0.26, 'Service': 0.33, 'Environment': 0.16}, 'Beatrix': {'Willingness to Travel': 0.17, 'Desire for New Experience': 0.12, 'Cost': 0.39, 'Choice of Menu': 0.05, 'Service': 0.14, 'Environment': 0.13}, "Y'shtola": {'Willingness to Travel': 0.16, 'Desire for New Experience': 0.06, 'Cost': 0.48, 'Choice of Menu': 0.04, 'Service': 0.13, 'Environment': 0.13}, 'Roxy': {'Willingness to Travel': 0.27, 'Desire for New Experience': 0.35, 'Cost': 0.11, 'Choice of Menu': 0.1, 'Service': 0.1, 'Environment': 0.07}, 'Moth': {'Willingness to Travel': 0.12, 'Desire for New Experience': 0.17, 'Cost': 0.12, 'Choice of Menu': 0.03, 'Service': 0.47, 'Environment': 0.09}, 'Troi': {'Willingness to Travel': 0.3, 'Desire for New Experience': 0.01, 'Cost': 0.01, 'Choice of Menu': 0.06, 'Service': 0.3, 'Environment': 0.32}, 'Olivia': {'Willingness to Travel': 0.27, 'Desire for New Experience': 0.23, 'Cost': 0.3, 'Choice of Menu': 0.03, 'Service': 0.02, 'Environment': 0.15}, 'Lilith': {'Willingness to Travel': 0.2, 'Desire for New Experience': 0.09, 'Cost': 0.13, 'Choice of Menu': 0.11, 'Service': 0.11, 'Environment': 0.36}}
+== People ==
+['Claire', 'Angel', 'Val', 'Beatrix', "Y'shtola", 'Roxy', 'Moth', 'Troi', 'Olivia', 'Lilith']
+The names used here are NPCs from my D&D setting (some of which may be borrowed from other sources).
+
+== Preferences ==
+['Willingness to Travel', 'Desire for New Experience', 'Cost', 'Choice of Menu', 'Service', 'Environment'] 
+
+---== People Matrix ==---
+[[0.24 0.43 0.06 0.06 0.18 0.03]
+ [0.02 0.04 0.17 0.35 0.02 0.4 ]
+ [0.17 0.07 0.01 0.26 0.33 0.16]
+ [0.17 0.12 0.39 0.05 0.14 0.13]
+ [0.16 0.06 0.48 0.04 0.13 0.13]
+ [0.27 0.35 0.11 0.1  0.1  0.07]
+ [0.12 0.17 0.12 0.03 0.47 0.09]
+ [0.3  0.01 0.01 0.06 0.3  0.32]
+ [0.27 0.23 0.3  0.03 0.02 0.15]
+ [0.2  0.09 0.13 0.11 0.11 0.36]] 
+
+{'The Bottle': {'Distance': 4, 'Novelty': 7, 'Cost': 9, 'Menu Options': 1, 'Staff': 1, 'Ambiance': 7}, "Humphrey's": {'Distance': 3, 'Novelty': 2, 'Cost': 5, 'Menu Options': 5, 'Staff': 1, 'Ambiance': 6}, "Maggie Meyer's": {'Distance': 8, 'Novelty': 6, 'Cost': 1, 'Menu Options': 5, 'Staff': 10, 'Ambiance': 10}, "Keegan's": {'Distance': 3, 'Novelty': 3, 'Cost': 1, 'Menu Options': 4, 'Staff': 8, 'Ambiance': 4}, 'Grille 29': {'Distance': 10, 'Novelty': 8, 'Cost': 6, 'Menu Options': 2, 'Staff': 7, 'Ambiance': 7}, 'Caffe Espresso': {'Distance': 3, 'Novelty': 4, 'Cost': 4, 'Menu Options': 10, 'Staff': 5, 'Ambiance': 7}, "Anduzzi's": {'Distance': 7, 'Novelty': 7, 'Cost': 5, 'Menu Options': 3, 'Staff': 3, 'Ambiance': 5}, 'Cotton Row': {'Distance': 1, 'Novelty': 2, 'Cost': 3, 'Menu Options': 1, 'Staff': 9, 'Ambiance': 8}, 'Republic Chophouse': {'Distance': 9, 'Novelty': 4, 'Cost': 3, 'Menu Options': 4, 'Staff': 5, 'Ambiance': 2}}
+== Restaurants ==
+['The Bottle', "Humphrey's", "Maggie Meyer's", "Keegan's", 'Grille 29', 'Caffe Espresso', "Anduzzi's", 'Cotton Row', 'Republic Chophouse']
+The names of these restaurants come from the city I currently live in, and the restaurants I worked in when I was a chef.
+
+== Attributes ==
+['Distance', 'Novelty', 'Cost', 'Menu Options', 'Staff', 'Ambiance'] 
+
+---== Restaurant Matrix ==---
+[[ 4  7  9  1  1  7]
+ [ 3  2  5  5  1  6]
+ [ 8  6  1  5 10 10]
+ [ 3  3  1  4  8  4]
+ [10  8  6  2  7  7]
+ [ 3  4  4 10  5  7]
+ [ 7  7  5  3  3  5]
+ [ 1  2  3  1  9  8]
+ [ 9  4  3  4  5  2]] 
+
+> The most important idea in this project is the idea of a linear combination.
+> Informally describe what a linear combination is and how it will relate to our restaurant matrix.
+
+Linear combination takes two equations and simplifies, removing one variable.
+Here, we want to take in the preferences of the people and attributes of the restaurants, and arrive at a rank.
+
+[5 1 8 2 9 7 6 3 4] 
+
+== Restaurant Rankings by Person ==
+[[4.96 5.06 2.97 6.13 6.46 5.21 3.88 3.96 6.49 5.34]
+ [2.54 5.16 3.29 3.87 4.11 3.08 2.46 3.49 3.84 4.25]
+ [6.96 6.52 7.99 5.42 4.92 6.57 7.85 8.97 5.69 7.52]
+ [3.87 3.51 5.05 3.1  2.86 3.45 5.23 4.86 2.68 3.76]
+ [7.79 5.18 6.27 6.99 6.86 7.55 7.26 7.6  7.59 7.01]
+ [4.39 7.3  6.2  4.66 4.6  4.64 4.8  5.32 4.38 5.65]
+ [5.86 4.38 4.3  5.2  5.1  5.84 4.58 4.9  5.9  5.14]
+ [3.2  4.34 4.85 3.93 3.97 2.86 5.8  5.67 3.04 4.75]
+ [5.26 3.15 4.85 4.34 4.19 5.2  4.77 5.15 4.77 4.26]] 
+
+Each row is a restaurant, while each column is an individual.
+Each cell represents the rank of the given restaurant for that individual.
+
+The sum of each row represents its score for the group as a whole, on a scale of 0 to 100.
+
+['The Bottle', "Humphrey's", "Maggie Meyer's", "Keegan's", 'Grille 29', 'Caffe Espresso', "Anduzzi's", 'Cotton Row', 'Republic Chophouse']
+[50.46 36.09 68.41 38.37 70.1  51.94 51.2  42.41 45.94]
+
+-- Restaurant Preferences --
+> Choose a person and compute(using a linear combination) the top restaurant for them.  What does each entry in the resulting vector represent.
+[Claire] has a score for [The Bottle] of 4.959999999999999
+[Claire] has a score for [Humphrey's] of 2.5400000000000005
+[Claire] has a score for [Maggie Meyer's] of 6.959999999999999
+[Claire] has a score for [Keegan's] of 3.8699999999999997
+[Claire] has a score for [Grille 29] of 7.79
+[Claire] has a score for [Caffe Espresso] of 4.39
+[Claire] has a score for [Anduzzi's] of 5.859999999999999
+[Claire] has a score for [Cotton Row] of 3.2
+[Claire] has a score for [Republic Chophouse] of 5.26
+
+Each value in this vector represents Claire's combined preference for the restaurant in question,
+combining her preferences with the attributes of the restaurant.
+
+The following list each individual's preferred restaurant.
+[Claire] prefers [Grille 29]
+[Angel] prefers [Caffe Espresso]
+[Val] prefers [Maggie Meyer's]
+[Beatrix] prefers [Grille 29]
+[Y'shtola] prefers [Grille 29]
+[Roxy] prefers [Grille 29]
+[Moth] prefers [Maggie Meyer's]
+[Troi] prefers [Maggie Meyer's]
+[Olivia] prefers [Grille 29]
+[Lilith] prefers [Maggie Meyer's]
+
+Which restaurant got the best rating, and who had the strongest preference for it?
+
+[The Bottle] is most strongly preferred by [Olivia]
+[Humphrey's] is most strongly preferred by [Angel]
+[Maggie Meyer's] is most strongly preferred by [Troi]
+[Keegan's] is most strongly preferred by [Moth]
+[Grille 29] is most strongly preferred by [Claire]
+[Caffe Espresso] is most strongly preferred by [Angel]
+[Anduzzi's] is most strongly preferred by [Olivia]
+[Cotton Row] is most strongly preferred by [Moth]
+[Republic Chophouse] is most strongly preferred by [Claire]
+
+> Now convert each row in the M_usr_x_rest into a ranking for each user and call it M_usr_x_rest_rank.
+> Do the same as above to generate the optimal restaurant choice
+
+[("Humphrey's", 1), ("Keegan's", 2), ('Cotton Row', 3), ('Republic Chophouse', 4), ('The Bottle', 5), ("Anduzzi's", 6), ('Caffe Espresso', 7), ("Maggie Meyer's", 8), ('Grille 29', 9)] 
+
+> Why is there a difference between the two?  What problem arrives?  What does represent in the real world?
+
+After being confused by the output for a moment, these are in descending order (so 9 is best, 1 is worst). This means that our results match up with what we saw in the summarized matrix, above.
+
+Given how the ranks are generated, I'm not sure there is a way that a difference could show up between the rankings and the preference matrix; or, if there is, it is probably due to extreme outliers: people who value one attribute significantly higher than all others.

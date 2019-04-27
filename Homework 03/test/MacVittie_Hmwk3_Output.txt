@@ -1,0 +1,128 @@
+MACVITTIE - HOMEWORK 3
+
+> Q) The most imporant idea in this project is the idea of a linear combination.
+> Informally describe what a linear combination is and how it will relate to our resturant matrix.
+
+	Linear combination takes two equations and simplifies, removing one variable.
+	Here, we want to take in the preferences of the people and attributes of the restaurants, and arrive at a rank.
+
+
+> Q) Choose a person and compute (using a linear combination) the top restaurant for them. What does each entry in the resulting vector represent?
+	 ('The Bottle', 7.120000000000001)
+	 ("Humphrey's", 4.77)
+	 ("Maggie Meyer's", 5.57)
+	 ("Keegan's", 2.74)
+	 ('Grille 29', 7.1899999999999995)
+	 ('Caffe Espresso', 4.94)
+	 ("Anduzzi's", 5.43)
+	 ('Cotton Row', 3.99)
+	 ('Republic Chophouse', 4.12)
+
+	The best restaurant for Beatrix is Grille 29. The values in the vector above represent her preference for a particular restaurant as a combination of her preferences and the restaurant's qualities.
+
+> Q) Choose a person and compute(using a linear combination) the top restaurant for them. What does each entry in the resulting vector represent.
+	 ('The Bottle', 6.01)
+	 ("Humphrey's", 4.41)
+	 ("Maggie Meyer's", 7.88)
+	 ("Keegan's", 3.59)
+	 ('Grille 29', 7.98)
+	 ('Caffe Espresso', 5.199999999999999)
+	 ("Anduzzi's", 5.81)
+	 ('Cotton Row', 4.13)
+	 ('Republic Chophouse', 4.999999999999999)
+
+	These values represent Troi's level of preference for a given restaurant, based upon their preferences and the restaurant values of the locale in question.
+
+> Q) Next compute a new matrix (M_usr_x_rest  i.e. an user by restaurant) from all people. What does the a_ij matrix represent?
+
+ [[6.22 3.68 7.14 3.39 8.03 4.75 6.16 3.26 4.96]
+ [6.39 5.38 5.65 4.29 6.8  6.2  4.67 3.52 5.17]
+ [4.74 5.17 8.11 4.59 8.18 5.75 5.21 3.37 7.18]
+ [7.12 4.77 5.57 2.74 7.19 4.94 5.43 3.99 4.12]
+ [6.97 5.31 4.78 3.02 6.89 5.25 4.93 3.61 4.74]
+ [6.2  3.55 6.41 3.35 7.99 4.57 6.14 2.59 5.35]
+ [6.83 4.82 7.45 3.3  7.39 5.51 5.53 5.06 3.67]
+ [6.01 4.41 7.88 3.59 7.98 5.2  5.81 4.13 5.  ]
+ [6.69 4.02 5.67 2.68 7.73 4.35 5.93 3.02 4.91]
+ [6.   5.57 7.63 4.2  7.34 6.2  4.92 4.75 5.03]]
+
+	In this case, each row represents a person, and each column, a restaurant. So the 'i' value is the row, the 'j' the column; thus 'i' represents the person, while 'j' the restaurant.
+
+> Q) Sum all columns in M_usr_x_rest to get optimal restaurant for all users. What do the entries represent?
+[[47.59]
+ [48.07]
+ [52.3 ]
+ [45.87]
+ [45.5 ]
+ [46.15]
+ [49.56]
+ [50.01]
+ [45.  ]
+ [51.64]]
+
+	Each entry represents the sum of each rating from each person, based upon their preferences and the restaurant's qualities, resulting in a total score ranging from 0 to 100. In this case, the higher the score, the better: here it would appear that the second restaurant on the list, 'Humphrey's', should win.
+
+> Q) Now convert each row in the M_usr_x_rest into a ranking for each user and call it M_usr_x_rest_rank. Do the same as above to generate the optimal resturant choice.
+[[6 2 7 1 8 3 5 0 4]
+ [7 4 5 1 8 6 2 0 3]
+ [2 3 7 1 8 5 4 0 6]
+ [7 3 6 0 8 4 5 1 2]
+ [8 6 3 0 7 5 4 1 2]
+ [6 2 7 1 8 3 5 0 4]
+ [6 2 8 0 7 4 5 3 1]
+ [6 2 7 0 8 4 5 1 3]
+ [7 2 5 0 8 3 6 1 4]
+ [5 4 8 0 7 6 2 1 3]]
+	The Bottle: [6]
+	Humphrey's: [2]
+	Maggie Meyer's: [7]
+	Keegan's: [0]
+	Grille 29: [8]
+	Caffe Espresso: [5]
+	Anduzzi's: [5]
+	Cotton Row: [1]
+	Republic Chophouse: [3]
+
+ Q) Why is there a difference between the two? What problem arrives? What does represent in the real world?
+
+	What's going on here is that in the first matrix, we are using weighted values, while in the second, restaurants are being strictly ordered. For instance, someone might rate two restaurants a 2.12, then a 7.18, with all others being below the low or above the high value - but if ranked, those two values would be translated into rankings immediately nearby. Using strict ranking removes 'strong' opinions, and instead only cares about ordering, rather than a strength of preference.
+
+ Q) How should you preprocess your data to remove this problem.
+
+	I'm not really sure it's a problem, actually. This is just two different ways of looking at the data. In one model, you are taking strength of preference into account; in the other, you're only looking for a ranking, regardless of how strongly a person feels about certain aspects of a restaurant. It may be more useful to take the strong preferences into account, in terms of social cohesion. That said, it is possible that using the first system (using preferences as weights, rather than strict ordering) may be problematic as it would allow an individual with overwhelmingly strong preferences to dominate the model - but again, in real world social situations, if no one else has any particularly strong preferences, that might be acceptable.
+
+ Q) Find user profiles that are problematic, explain why.
+
+	Examining the a heatmap (see 'heatmap.png'), it doesn't look like there are any particularly problematic profiles. If anything it would appear that there may be some issues with restaurants: Keegan's seems universally loathed, while Grille 29 is widely liked.
+
+> Q) Think of two metrics to compute the disatistifaction with the group.
+	The Bottle: [1]
+	Humphrey's: [7]
+	Maggie Meyer's: [1]
+	Keegan's: [10]
+	Grille 29: [0]
+	Caffe Espresso: [3]
+	Anduzzi's: [2]
+	Cotton Row: [10]
+	Republic Chophouse: [6]
+
+	This vector indicates how often a restaurant appears in a person's 'bottom 3' picks: we could call this a 'dissatisfaction score', indicating the level of malcontent with the selection. Here we can see that Keegan's rates a 10, while Grille 29 rates a 0; other restaurants fall within that range. Given how our preferences and restaurant feature ratings fell out, it turns out that the most popular of the restaurants will leave no one unhappy. I wish I could say I planned that, because it'd be funnier that way, but I did not.
+
+	So for this particular group, it doesn't make sense to split into two groups: everyone is perfectly fine with Grille 29.
+
+> Q) Ok. Now you just found out the boss is paying for the meal. How should you adjust. Now what is best restaurant?
+	The Bottle: [5]
+	Humphrey's: [2]
+	Maggie Meyer's: [8]
+	Keegan's: [1]
+	Grille 29: [7]
+	Caffe Espresso: [6]
+	Anduzzi's: [3]
+	Cotton Row: [0]
+	Republic Chophouse: [4]
+
+	If cost is no object, then Maggie Meyer's overcomes Grille 29; in addition, there is some shuffling around of the other restaurants, but not much.
+
+> Q) Tomorrow you visit another team. You have the same restaurants and they told you their optimal ordering for restaurants. Can you find their weight matrix?
+
+	No, because that information has been lost. For instance, a person who rates everything low and a person who rates everything high could very well have the same rank ordering, but their actual preferences are significantly different. There's no way to reconsruct the weight matrix from just the rankings.
